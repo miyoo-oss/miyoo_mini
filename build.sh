@@ -14,9 +14,8 @@ declare -x CROSS_COMPILE="arm-linux-gnueabihf-"
 make infinity2m_defconfig
 make -j24
 
-if [ -d ../project/board/i2m/boot/nor/uboot ]; then
-	cp u-boot.xz.img.bin ../project/board/i2m/boot/nor/uboot
-fi
+mkdir -p ../project/board/i2m/boot/nor/uboot
+cp u-boot.xz.img.bin ../project/board/i2m/boot/nor/uboot
 
 #build kernel
 cd ${RELEASEDIR}/kernel
