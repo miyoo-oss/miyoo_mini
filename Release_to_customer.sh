@@ -1,50 +1,8 @@
 #!/bin/bash
-
-while getopts "f:p:q:o:" opt; do
-  case $opt in
-    f)
-      flashtype=$OPTARG
-      ;;
-    p)
-      chip=$OPTARG
-      ;;
-    q)
-      fastboot=$OPTARG
-      ;;
-    o)
-      project=$OPTARG
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      ;;
-  esac
-done
-
-DATE=$(date +%m%d)
-#RELEASEDIR=ReleaseToCus_${DATE}
-#images will output in ${RELEASEDIR}/images/
+set -e
 export RELEASEDIR=`pwd`
-#release source code
-#find ./boot/ | grep -v boot/.git | cpio -pdm ${RELEASEDIR}/
-#find ./project/ | grep -v project/.git | cpio -pdm ${RELEASEDIR}/
-#find ./kernel/ | grep -v kernel/.git | cpio -pdm ${RELEASEDIR}/
-#find ./sdk/ | grep sdk/verify | grep -v sdk/verify/application/smarttalk | cpio -pdm ${RELEASEDIR}/
-
-#save code version
-#repo manifest -o snapshot.xml -r
-#cp snapshot.xml ${RELEASEDIR}/sdk_version.xml
-
 export ARCH=arm
-
-echo chose ${flashtype}
-
-if [ ! "${project}" = "2D06" -a ! "${project}" = "2D07" ]; then
-	project=2D07
-	#exit 1
-fi	
-
-export PROJECT=${project}
-
+export PROJECT=2D06
 
 # build uboot
 cd ${RELEASEDIR}/boot

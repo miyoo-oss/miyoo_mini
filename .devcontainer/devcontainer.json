@@ -1,3 +1,6 @@
 {
-    "build": { "dockerfile": "Dockerfile" }
+    "build": { "dockerfile": "Dockerfile" },
+    "remoteEnv": {
+        "PATH": "${containerEnv:PATH}:/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf/bin"
+    }
 }

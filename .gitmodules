@@ -1,0 +1,6 @@
+[submodule "boot"]
+	path = boot
+	url = git@github.com:miyoo-oss/u-boot.git
+[submodule "kernel"]
+	path = kernel
+	url = git@github.com:miyoo-oss/kernel.git
