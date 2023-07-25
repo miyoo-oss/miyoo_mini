@@ -1,5 +1,7 @@
 ## Miyoo OSS Project
 
+WARNING: *THERE IS NO RETURN TO STOCK UNLESS YOU CAN MANUALLY FLASH. BE AWARE THAT THIS PROJECT IS VERY MUCH INCOMPLETE. NO GAMES RUN. NOTHING WILL DISPLAY ON YOUR SCREEN. YOU WILL BE HERE FOR A WHILE.*
+
 ### Building
 
 1) Open in vscode and use the devcontainer provided
@@ -9,10 +11,12 @@
 
 ### Running
 
+
 1) Copy `project/image/output/images/SigmastarUpgradeSD.bin` to your sdcard
 2) If you're on stock firmware, rename to your typical stock firmware filename
 3) Enter uboot shell
 4) type `sdstar`
+4) user is root
 
 ## Todo
 
